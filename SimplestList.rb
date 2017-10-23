@@ -1,37 +1,37 @@
-class Punto
+class Point
   def initialize(x, y)
     @x = x
     @y = y
   end
   
-  def mostrar
+  def showw
     puts '[' + @x.to_s + ', ' + @y.to_s + ']'
   end
 end
 
-class Lista 
+class Listt 
   def initialize
     @l = []
   end
   
-  def anadir (p)
+  def addd (p)
     @l.push(p)  
   end
   
-  def mostrar
+  def showw
     for ps in @l 
-      ps.mostrar()
+      ps.showw()
     end
   end
 end
 
 #main
- l = Lista.new()
+ l = Listt.new()
  
- p1 = Punto.new(5.5, 3.5)
- p2 = Punto.new(6.5, 4.5)
+ p1 = Point.new(5.5, 3.5)
+ p2 = Point.new(6.5, 4.5)
  
- l.anadir(p1)
- l.anadir(p2)
+ l.addd(p1)
+ l.addd(p2)
  
- l.mostrar
+ l.showw
