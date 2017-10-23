@@ -1,3 +1,4 @@
+#                            POINT
 class Point
   def initialize(x, y)
     @x = x
@@ -11,8 +12,15 @@ class Point
   def distance
     return (Math.sqrt(@x**2 + @y**2))  
   end
+  
+  def dist_between(p)
+    a = (p.x - @x).abs
+    b = (p.y - @y).abs 
+    return (Math.sqrt(a**2 + b**2))
+  end
 end
 
+#                          LIST
 class List
   def initialize
     @l = []
@@ -36,8 +44,11 @@ class List
     @l.delete(p)
   end
   
+  def le
+    puts @l.length
+  end  
+  
   def exists(p)
-#if p.in?(@l)
     if @l.index(p)
       print 'There is a point like: '
       p.show
@@ -46,9 +57,18 @@ class List
       p.show  
     end
   end
+  
+  def condi_print(p)
+    for ps in @l 
+      if(ps.dist_between(p) < ps.distance)
+        ps.show  
+      end
+    end
+  end
+  
 end
 
-#main
+#                                      main
  l = List.new()
  
  p5 = Point.new(3.5, 1.5)
@@ -71,5 +91,13 @@ end
  l.show
  puts ''
  
+ l.le
+ puts ''
+ 
  l.exists(p2)
-
+ puts ''
+ 
+ p2.show
+ puts '-------'
+ l.condi_print(p2)
+ puts ''
