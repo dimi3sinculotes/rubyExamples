@@ -1,35 +1,36 @@
 class Fraccion
-  def initialize(dem,num)
-    @dem, @num = dem, num
+  def initialize(num,den)
+    @num, @den = num, den
   end
   
-  attr_reader :dem, :num
+  attr_reader :num, :den
   
   def to_s
-    return @dem.to_s + '/' + @num.to_s
+    @num.to_s + '/' + @den.to_s
   end
   
   def is_less?(f)
-    return oper('<',f)
+    oper('<',f)
   end
   
   def is_grater?(f)
-    return oper('>',f)
+    oper('>',f)
   end
   
   def is_equal?(f)
-    return oper('=',f)
+    oper('=',f)
   end
   
+  # Obviously there is  no  need  for doing this, but i wanted  to  test  some  private views
   private  
     def oper(o, f)
       case o
       when '<'
-        return ((@dem*f.num) < (f.dem*@num))
+        ((@num*f.den) < (f.num*@den))
       when'>'
-        return ((@dem*f.num) > (f.dem*@num))
+        ((@num*f.den) > (f.num*@den))
       else
-        return ((@dem*f.num) == (f.dem*@num))
+        ((@num*f.den) == (f.num*@den))
       end
     end
 end
