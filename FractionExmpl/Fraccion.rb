@@ -10,27 +10,19 @@ class Fraccion
   end
   
   def is_less?(f)
-    oper('<',f)
+    return compare(f) < 0
   end
   
   def is_grater?(f)
-    oper('>',f)
+    return compare(f) > 0
   end
   
   def is_equal?(f)
-    oper('=',f)
+    return compare(f) == 0
   end
   
-  # Obviously there is  no  need  for doing this, but i wanted  to  test  some  private views
   private  
-    def oper(o, f)
-      case o
-      when '<'
-        ((@num*f.den) < (f.num*@den))
-      when'>'
-        ((@num*f.den) > (f.num*@den))
-      else
-        ((@num*f.den) == (f.num*@den))
-      end
+    def compare(f)
+      (@num*f.den) - (f.num*@den)
     end
 end
