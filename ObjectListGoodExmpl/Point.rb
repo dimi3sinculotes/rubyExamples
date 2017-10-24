@@ -4,13 +4,7 @@ class Point
     @y = y
   end
   
-  def getx
-      return @x
-  end
-  
-  def gety
-      return @y
-  end
+  attr_reader :x, :y
   
   def to_s
    '[' + @x.to_s + ', ' + @y.to_s + ']'
@@ -21,8 +15,8 @@ class Point
   end
   
   def dist_between(p)
-    a = (p.getx - @x).abs
-    b = (p.gety - @y).abs 
+    a = (p.x - @x).abs
+    b = (p.y - @y).abs 
     return (Math.sqrt(a**2 + b**2))
   end
 end
