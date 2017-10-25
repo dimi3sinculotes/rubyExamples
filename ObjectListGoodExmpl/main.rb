@@ -1,5 +1,5 @@
-require 'Point'
-require 'List'
+require './Point'
+require './List'
  
 l = List.new()
  
