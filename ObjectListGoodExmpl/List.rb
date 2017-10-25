@@ -1,4 +1,4 @@
-require 'Point'
+require './Point'
 class List
   def initialize
     @l = []
